@@ -1,0 +1,191 @@
+% ----------------------------------------------------------------------------------------%
+%	Created by Alessandro with TeXShop						%
+%	---->	May 27, 2009										%
+%	Compiled with XeLaTeX, on Mac OS X						%
+%	Licensed under the Creative Commons Attribution 3.0 Unported	%
+%	Share, change, spread, and have fun!						%
+%	http://creativecommons.org/licenses/by/3.0/					%
+%	You can find more at http://aleplasmati.comuv.com				%
+% ----------------------------------------------------------------------------------------%
+
+\documentclass[10pt]{article}
+
+%Load Graphics and Colours
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usepackage{wrapfig}
+\definecolor{linkcolour}{HTML}{2b2b2b}
+\definecolor{text1}{HTML}{2B2B2B}			
+\definecolor{headings}{HTML}{0AC2FF} 	
+\definecolor{backgroundColor}{HTML}{0AC2FF} 	
+
+%!TEX encoding =  UTF-16
+
+%margins
+\usepackage[hmargin=1.25cm, vmargin=1cm]{geometry}    
+\linespread{1.2}
+\usepackage{setspace}
+
+
+%Styling Itemizations
+\usepackage{enumitem}
+\renewcommand{\labelitemi}{\symbol{"E052}}
+
+%Fonts and Tweaks for XeLaTeX
+\font\headers="Helvetica Neue Bold:letterspace=5" at 20pt
+\font\SectionHeaders="Helvetica Neue Bold:letterspace=5" at 14pt
+%\font\headers="Qlassik Bold:letterspace=5" at 22pt
+%\font\SectionHeaders="Qlassik Bold:letterspace=5" at 14pt
+\font\Career="Calluna:color=2b2b2b" at 13pt
+\font\Text="Calluna:color=2b2b2b" at 11pt
+\font\TextAlt="Calluna:color=CC3300" at 11pt
+\font\TextSC="Calluna:+smcp, color=2b2b2b" at 11pt
+\font\slash="Calluna:+zero, color=2b2b2b" at 40pt
+\font\slashAlt="Calluna:+zero, color=CC3300" at 40pt
+\font\ContactHeaders="Calluna" at 170 pt
+\font\trick="Calluna:color=FFFFFF" at 0.1 pt
+
+%Setup hyperref package, and colours for links, text and headings
+\usepackage{hyperref}		
+\hypersetup{	colorlinks,breaklinks,
+			urlcolor=linkcolour, 
+			linkcolor=linkcolour}
+
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\usepackage{titlesec}
+\titleformat{\section}
+	{\SectionHeaders\raggedright}{}{0em}{}
+
+\titlespacing{\section}{0pt}{0pt}{5pt}
+\thispagestyle{empty}
+
+\tikzset{background/.style={fill=backgroundColor}}
+\tikzset{background grid/.style = {thick, draw  = red, step = .5cm}}
+%Thumbnail for the Portfolio
+\newcommand{%
+	\thumbnail}[2]{
+		\raggedleft\hfill{\href{#1}
+			{\trick \raisebox{-3pt}{.}
+				\fbox{
+			\includegraphics[scale=0.6]{#2}}
+			\raisebox{70pt}{.}}}
+			}
+%Social ICONS
+\newcommand{\icons}[2]{
+		{\href{#1}
+		{\trick \raisebox{-1pt}{.}
+			\raisebox{-4pt}{
+			\includegraphics{#2}}
+		\raisebox{10pt}{.}}}
+		}
+
+%BEGIN DOCUMENT		
+\begin{document}
+
+%BORDER
+\begin{tikzpicture}[remember picture, overlay]
+\draw [style=background, xshift=-2.5cm, yshift=2cm, very thin] (0,-290mm) rectangle (20mm, 0mm);
+\end{tikzpicture}
+
+% TITLE
+
+{\centering{\headers ERIC KOSLOW}\\[25pt]\par}
+
+%{\color{white} \hrule} %does this rule really change anything?
+
+\parbox{0.8\textwidth}{ %START of left-hand side minipage
+
+	\vspace{0pt}	%trick
+	
+% <<<< NEW SECTION >>>>	
+\section{CAREER OBJECTIVE}
+{\Career 
+
+%\begin{wrapfigure}{L}{15mm}
+%\vspace{-10pt}
+%\includegraphics[scale = 0.5]{moleskine.png}
+%\end{wrapfigure}
+
+
+\begin{spacing}{1.4}\Career
+To work on interesting projects and to have an adventure.
+\end{spacing}
+
+\raggedleft\raisebox{5pt}{\rule{11cm}{1pt}}
+
+}
+\vspace{10pt}
+}
+
+\begin{minipage}[t]{0.8\textwidth}
+\section{EXPERIENCE}
+\vspace{0pt}
+%	%WORK EXPERIENCE -1-
+\begin{itemize}[leftmargin=1cm, itemsep=0pt, topsep=5pt] \Text\raggedright
+	\item Created and designed a site to measure the valuation of the company Mojang. The site polled hourly the sales data from the company, then used real world valuation techniques to eqate the value of the company. This site still can be viewed at, \url{http://whatsminecraftsvalue.com/}
+
+	\item Created the website Tutorii.com. The site provided a place for students to peer teach one another, as well as get help with their homework and classes. Turorii was featured in local magazines as well as local television stations. The site is no longer up, but can still be read about at RIT's news site, \url{http://www.rit.edu/news/story.php?id=47197} 
+
+	\item Created and wrote a business plan for a green energy power plant that would be built in third world countries.  The plant in currently being tested in Canada.
+
+  \item Brought a failed informatics company back from bankruptcy. Its now valued around 5 million dollars.
+
+  \item Wrote a custom web-based SCADA system to work in the natural gas industry.
+
+\end{itemize}
+\vspace{10pt}
+\section{COMPUTER SKILLS}
+\begin{itemize}[leftmargin=1cm, itemsep=0pt, topsep=5pt]\Text
+\item Markup languages (such as {\TextSC html}, {\TextSC xHtml}, {\TextSC xml} and \LaTeX);
+\item Style sheet languages (such as {\TextSC css} and {\TextSC sass});
+\item Client-side scripting (such as JavaScript);
+\item Server-side scripting (such as {\TextSC php}, {\TextSC ruby} and {\TextSC python});
+\item Database technologies (such as MySQL and PostgreSQL);
+\item Traditional Languages (such as Java, C and C++).
+\end{itemize}
+\end{minipage} %END of left-hand side minipage
+\hfill
+\vspace{30pt}
+\titleformat{\section}
+	{\color{backgroundColor}\centering}{}{0em}{}
+{
+ %START of right-hand side minipage
+
+\par\centering
+\begin{tikzpicture}
+\draw[solid, color=text1, very thin, double, double distance=2pt] (0pt,0pt) -- (11cm,0pt);
+\end{tikzpicture}
+
+\vspace{10pt}
+\centering
+\begin{tikzpicture}[overlay, opacity=0.3,color=text1, xshift=10cm, yshift=-20mm, show background rectangle]
+	\draw node	{\ContactHeaders conta\symbol{"E087}s};
+\end{tikzpicture}
+	\Text 	
+	\begin{minipage}[t]{0.5\textwidth}
+	\end{minipage}
+\hfill\begin{minipage}[t]{0.4\textwidth}
+\begin{tikzpicture}[overlay, opacity=0.8, color=black, xshift=-1.5cm, yshift=4pt]
+\draw node {\slash 2.\slashAlt0};
+\end{tikzpicture}
+\raggedleft
+	\icons{http://twitter.com/ekoslow} {twitter.png} 
+	\icons{http://www.last.fm/user/ekosz} 			{lastfm.png} 
+	\icons{http://www.reddit.com/user/ekosz} 		{reddit.png} 
+  \icons{http://www.facebook.com/ekosz} {facebook.png}
+  \icons{http://www.github.com/ekosz} {github.png}
+	\icons{http://www.linkedin.com/in/erickoslow}		{linkedin.png} \\
+	
+
+\vspace{15pt}
+\begin{tikzpicture}[overlay, opacity=0.8, xshift=-5.31cm, yshift=-3mm, color=backgroundColor]
+\draw node {\slashAlt 1.\slash 0};
+\end{tikzpicture}
+	{\TextAlt phone}\\ +1(203)648-4309\\
+		{\TextAlt email}\\ ekoslow@gmail.com\\
+	\end{minipage}
+}
+\end{document}  
